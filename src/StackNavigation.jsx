@@ -21,7 +21,7 @@ const StackNavigation = () => {
             }}
         >
 
-            {user ? (
+            {!user ? (
                 <>
                     <Stack.Screen name='Profile' component={Profile} />
                     <Stack.Screen name='Chat' component={Chat} />
