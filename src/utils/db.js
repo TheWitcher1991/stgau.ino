@@ -2,13 +2,15 @@ import { getFirestore } from '@firebase/firestore'
 import { initializeApp } from 'firebase/app'
 import { getAuth, signOut, signInWithEmailAndPassword } from 'firebase/auth'
 
+import API from './setting'
+
 const firebaseConfig = {
-    apiKey: "AIzaSyDhMSuyiwWSLIZyt4OWK65ms3JueMykT5I",
-    authDomain: "stgauino.firebaseapp.com",
-    projectId: "stgauino",
-    storageBucket: "stgauino.appspot.com",
-    messagingSenderId: "954746004699",
-    appId: "1:954746004699:web:3b555c2f661839afa358fe"
+    apiKey: API.API_KEY,
+    authDomain: API.AUTH_DOMAIN,
+    projectId: API.PROJECT_ID,
+    storageBucket: API.STORAGE_BUCKET,
+    messagingSenderId: API.MESSAGE_SENDER_ID,
+    appId: API.APP_ID
 }
 
 export const app = initializeApp(firebaseConfig)

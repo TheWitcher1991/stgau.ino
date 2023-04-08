@@ -1,11 +1,14 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { ScrollView } from 'react-native'
 
-const Chat = () => {
+import Layout from '../Layout'
+
+const Chat = ({ navigation }) => {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>Чат</Text>
-        </View>
+        <Layout>
+            <ScrollView>
+            </ScrollView>
+        </Layout>
     )
 }
 

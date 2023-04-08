@@ -6,7 +6,7 @@ import React, {
     useState,
 } from 'react'
 import { onAuthStateChanged } from '@firebase/auth'
-import { auth, login, logout, app } from '../db/db'
+import { auth, login, logout, app } from '../utils/db'
 
 const AuthContext = createContext({})
 
@@ -45,6 +45,7 @@ export const AuthProvider = ({ children }) => {
                 if (user) {
                     setUser({
                         ...user,
+                        role: ''
                     })
                 } else {
                     setUser(null)
