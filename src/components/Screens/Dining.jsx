@@ -1,12 +1,21 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, SafeAreaView, StyleSheet } from 'react-native'
 
 const Dining = () => {
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <SafeAreaView style={styles.BasicStyle}>
             <Text>Столовая</Text>
-        </View>
+        </SafeAreaView>
     )
 }
-
-export default Dining
+const styles = StyleSheet.create ({
+    BasicStyle: {
+        justifyContent: "top",
+        alignItems: "left",
+        flex: 1,
+    },
+    text: {
+        color: 'red'
+    }
+})
+export default Dining   

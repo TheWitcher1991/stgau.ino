@@ -2,13 +2,14 @@ import React from 'react'
 import StackNavigation from './src/StackNavigation'
 import { NavigationContainer } from '@react-navigation/native'
 import { AuthProvider } from './src/useAuth'
+import { StatusBar } from 'expo-status-bar'
 
 const App = () => {
   return (
       <NavigationContainer>
           <AuthProvider>
               <StackNavigation />
-          </AuthProvider>
+          </AuthProvider>  
       </NavigationContainer>
   )
 }

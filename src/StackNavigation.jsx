@@ -21,8 +21,8 @@ const StackNavigation = () => {
         >
             {user ? (
                 <>
-                    <Stack.Screen name='Chat' component={Chat} />
                     <Stack.Screen name='Dining' component={Dining} />
+                    <Stack.Screen name='Chat' component={Chat} />
                 </>
             ) : (
                 <Stack.Screen name='Auth' component={AuthForm} />
