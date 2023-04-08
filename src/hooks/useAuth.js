@@ -6,11 +6,11 @@ import React, {
     useState,
 } from 'react'
 import { onAuthStateChanged } from '@firebase/auth'
-import { auth, login, logout } from './db/db'
+import { auth, login, logout, app } from '../db/db'
 
 const AuthContext = createContext({})
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [isLoadingInitial, setIsLoadingInitial] = useState(true)
     const [isLoading, setIsLoading] = useState(false)
@@ -21,7 +21,7 @@ export const AuthProvider = ({children}) => {
         try {
             await login(email, password)
         } catch(error) {
-
+            alert(error)
         } finally {
             setIsLoading(false)
         }
@@ -33,7 +33,7 @@ export const AuthProvider = ({children}) => {
         try {
             await logout()
         } catch (error) {
-
+            alert(error)
         } finally {
             setIsLoading(false)
         }

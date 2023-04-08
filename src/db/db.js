@@ -11,7 +11,8 @@ const firebaseConfig = {
     appId: "1:954746004699:web:3b555c2f661839afa358fe"
 }
 
-const app = initializeApp(firebaseConfig)
+export const app = initializeApp(firebaseConfig)
+
 export const auth = getAuth()
 
 export const login = (email, password) =>
@@ -20,5 +21,3 @@ export const login = (email, password) =>
 export const logout = () => signOut(auth)
 
 export const db = getFirestore()
-
-console.log(db)

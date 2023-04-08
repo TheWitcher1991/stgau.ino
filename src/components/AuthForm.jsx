@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Button, TextInput, View } from 'react-native'
-import { useAuth } from '../useAuth'
+import { useAuth } from '../hooks/useAuth'
+
+import Style from '../styles/layout.scss'
 
 const AuthForm = () => {
     const [email, setEmail] = useState('')
@@ -10,7 +12,7 @@ const AuthForm = () => {
 
     return (
         <View>
-            <View style={{ width: 300 }}>
+            <View>
                 <TextInput
                     onChangeText={setEmail}
                     value={email}

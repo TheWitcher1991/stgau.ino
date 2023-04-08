@@ -1,14 +1,11 @@
 import React from 'react'
-import { View, Text } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack'
 import AuthForm from './components/AuthForm'
-import { useAuth } from './useAuth'
+import { useAuth } from './hooks/useAuth'
 import Chat from './components/Screens/Chat'
 import Dining from './components/Screens/Dining'
 
 const Stack = createStackNavigator()
-
-// TODO: ПОКА ЧТО ТАК, Я ЕЩЁ СОЗДАМ ЭКРАНЫ
 
 const StackNavigation = () => {
     const { user } = useAuth()
