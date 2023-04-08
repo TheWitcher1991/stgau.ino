@@ -1,6 +1,6 @@
 import { getFirestore } from '@firebase/firestore'
 import { initializeApp } from 'firebase/app'
-import { getAuth, signOut, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
 
 import API from './setting'
 

@@ -8,6 +8,8 @@ import React, {
 import { onAuthStateChanged } from '@firebase/auth'
 import { auth, login, logout, app } from '../utils/db'
 
+
+
 const AuthContext = createContext({})
 
 export const AuthProvider = ({ children }) => {
@@ -22,6 +24,7 @@ export const AuthProvider = ({ children }) => {
             await login(email, password)
         } catch(error) {
             alert(error)
+            console.log(error)
         } finally {
             setIsLoading(false)
         }
@@ -45,7 +48,7 @@ export const AuthProvider = ({ children }) => {
                 if (user) {
                     setUser({
                         ...user,
-                        role: ''
+                        role: 'user',
                     })
                 } else {
                     setUser(null)

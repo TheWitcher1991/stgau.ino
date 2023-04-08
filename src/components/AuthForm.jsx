@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
-import {StyleSheet, TextInput, View, Pressable, Text, Image} from 'react-native'
+import {StyleSheet, TextInput, View, Pressable, Text, Image, Alert} from 'react-native'
 import { useAuth } from '../hooks/useAuth'
 
-
-import formStyle from '../styles/form'
-import Layout from './Layout'
+import Layout from './template/Layout'
 
 const AuthForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    const { login, isLoading } = useAuth()
+    
+    const { login, isLoading, error } = useAuth()
 
     return (
 
@@ -32,6 +30,8 @@ const AuthForm = () => {
                 />
                 
                 <View style={{width: 300}}>
+
+                    <Text>{error}</Text>
 
                     <Text style={{
                         color:'#fefefe',
@@ -57,14 +57,14 @@ const AuthForm = () => {
                         fontFamily: 'mt-regular',
                         textAlign: 'left',
                         marginBottom: 6
-                    }}>Email</Text>
+                    }}>Логин</Text>
                     <TextInput
                         placeholderTextColor='#585858'
                         style={stylesCreated.input}
                         onChangeText={setEmail}
                         value={email}
                         autoFocus
-                        placeholder='Enter email'
+                        placeholder='Введите логин'
                     />
 
                     <Text style={{
@@ -79,12 +79,12 @@ const AuthForm = () => {
                         style={stylesCreated.input}
                         onChangeText={setPassword}
                         value={password}
-                        placeholder='Enter password'
+                        placeholder='Введите пароль'
                         secureTextEntry={true}
                     />
 
                     <Pressable style={styles.button} onPress={async () => await login(email, password)}>
-                        <Text style={styles.text}>{isLoading ? 'Loading...' : 'Sign in'}</Text>
+                        <Text style={styles.text}>{isLoading ? 'Загрузка...' : 'Войти'}</Text>
                     </Pressable>
                 </View>
             </View>
