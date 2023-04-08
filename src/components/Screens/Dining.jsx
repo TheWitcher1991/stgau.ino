@@ -4,7 +4,7 @@ import { Text, SafeAreaView, StyleSheet } from 'react-native'
 const Dining = () => {
     return (
         <SafeAreaView style={styles.BasicStyle}>
-            <Text>Столовая</Text>
+            <Text>Столовая!</Text>
         </SafeAreaView>
     )
 }
