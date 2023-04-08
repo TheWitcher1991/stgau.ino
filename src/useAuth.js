@@ -7,7 +7,6 @@ import React, {
 } from 'react'
 import { onAuthStateChanged } from '@firebase/auth'
 import { auth, login, logout } from './db/db'
-import alert from "react-native-web/dist/exports/Alert";
 
 const AuthContext = createContext({})
 
@@ -50,6 +49,8 @@ export const AuthProvider = ({children}) => {
                 } else {
                     setUser(null)
                 }
+
+                setIsLoadingInitial(false)
         }),
         []
     )

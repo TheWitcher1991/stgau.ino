@@ -3,7 +3,7 @@ import StackNavigation from './src/StackNavigation'
 import { NavigationContainer } from '@react-navigation/native'
 import { AuthProvider } from './src/useAuth'
 
-export default function App() {
+const App = () => {
   return (
       <NavigationContainer>
           <AuthProvider>
@@ -12,3 +12,5 @@ export default function App() {
       </NavigationContainer>
   )
 }
+
+export default App
