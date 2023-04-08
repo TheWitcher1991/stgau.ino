@@ -11,11 +11,12 @@ const Header = ({ navigation, name }) => {
         <View style={{
             alignItems: 'center',
             justifyContent: 'space-around',
-            padding: 4,
+            padding: 6,
+            paddingVertical: 16,
+            margin: 12,
+            borderRadius: 20,
             flexDirection: 'row',
-            backgroundColor: '#1e1f23',
-            borderBottomWidth: 1,
-            borderBottomColor: '#282828',
+            backgroundColor: '#151515',
         }}>
             <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
                 <View style={{
@@ -95,12 +96,14 @@ const styles = StyleSheet.create({
     text: {
         color: '#76787a',
         fontSize: 11,
+        marginTop: 3,
         fontFamily: 'mt-medium',
     },
     textActive: {
         color: '#ffffff',
         fontFamily: 'mt-medium',
-        fontSize: 11,
+        fontSize: 10,
+        marginTop: 3,
         fontWeight: 500
     }
 })

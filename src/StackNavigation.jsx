@@ -21,11 +21,11 @@ const StackNavigation = () => {
             }}
         >
 
-            {!user ? (
+            {user ? (
                 <>
                     <Stack.Screen name='Profile' component={Profile} />
-                    <Stack.Screen name='Chat' component={Chat} />
                     <Stack.Screen name='Dining' component={Dining} />
+                    <Stack.Screen name='Chat' component={Chat} />
                     <Stack.Screen name='Im' component={Im} />
                 </>
             ) : (

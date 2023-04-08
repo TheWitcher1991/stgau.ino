@@ -10,12 +10,14 @@ const Chat = ({ navigation }) => {
     return (
         <Layout>
             
-            <Header name='Chat' navigation={navigation} />
+            
             
             <ScrollView>
                 <Stories />
                 <MessagesList />
             </ScrollView>
+
+            <Header name='Chat' navigation={navigation} />
         </Layout>
     )
 }
