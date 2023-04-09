@@ -2,7 +2,7 @@ import React from 'react'
 import {View, TextInput, Text, TouchableOpacity, ScrollView} from 'react-native'
 import {AntDesign, Feather, Ionicons} from "@expo/vector-icons";
 
-const Stories = () => {
+const ChatHeader = () => {
     return ( 
         <View>
             
@@ -37,4 +37,4 @@ const Stories = () => {
     )
 }
 
-export default Stories
+export default ChatHeader

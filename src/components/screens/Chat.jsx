@@ -2,7 +2,7 @@ import React from 'react'
 import { ScrollView } from 'react-native'
 
 import Layout from '../template/Layout'
-import Stories from '../Stories'
+import ChatHeader from '../template/ChatHeader'
 import MessagesList from '../messages/MessagesList'
 import Header from '../template/Header'
 
@@ -11,7 +11,7 @@ const Chat = ({ navigation }) => {
         <Layout>
             
             <ScrollView>
-                <Stories />
+                <ChatHeader />
                 <MessagesList />
             </ScrollView>
 

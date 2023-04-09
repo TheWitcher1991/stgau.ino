@@ -4,8 +4,6 @@ import users from '../../utils/users'
 import {Pressable, ScrollView, Text, TextInput, TouchableOpacity, View} from 'react-native'
 import {AntDesign, Feather, Ionicons} from "@expo/vector-icons";
 
-console.log(users[0].uid)
-
 export const conversations = [
     {
         id: '1',
