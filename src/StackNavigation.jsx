@@ -11,8 +11,6 @@ const Stack = createStackNavigator()
 
 const StackNavigation = () => {
     const { user } = useAuth()
-
-    console.log(user)
     
     return (
         <Stack.Navigator
@@ -36,3 +34,9 @@ const StackNavigation = () => {
 }
 
 export default StackNavigation
+
+
+
+
+
+

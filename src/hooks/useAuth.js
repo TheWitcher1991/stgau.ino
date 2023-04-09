@@ -8,10 +8,7 @@ import React, {
 import { onAuthStateChanged } from '@firebase/auth'
 import { auth, login, logout, app } from '../utils/db'
 
-
-
 const AuthContext = createContext({})
-
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [isLoadingInitial, setIsLoadingInitial] = useState(true)
@@ -19,12 +16,10 @@ export const AuthProvider = ({ children }) => {
 
     const loginHandler = async (email, password) => {
         setIsLoading(true);
-
         try {
             await login(email, password)
         } catch(error) {
             alert(error)
-            console.log(error)
         } finally {
             setIsLoading(false)
         }
@@ -32,7 +27,6 @@ export const AuthProvider = ({ children }) => {
 
     const logoutHandler = async () => {
         setIsLoading(true)
-
         try {
             await logout()
         } catch (error) {
@@ -49,6 +43,12 @@ export const AuthProvider = ({ children }) => {
                     setUser({
                         ...user,
                         role: 'user',
+                        name: 'Ашот Свазян',
+                        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ANVmA23FZZhVYWmJ0kNrdzNiNqi0jDXK-BG5jtwbe6SDq4CpJ_VIDk7TNxsFP0UdWxs&usqp=CAU',
+                        phone: '+7 (909) 652-45-56',
+                        direction: 'Информационные системы и технологии',
+                        faculty: 'Экономический',
+                        study: '21.7151.3.1.037'
                     })
                 } else {
                     setUser(null)
@@ -77,3 +77,8 @@ export const AuthProvider = ({ children }) => {
 }
 
 export const useAuth = () => useContext(AuthContext)
+
+
+
+
+

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import {
     View,
-    Text,
     ScrollView,
     TextInput,
-    TouchableOpacity,
+    Text,
+    TouchableOpacity, Image,
 } from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import {AntDesign, Feather, Ionicons, MaterialCommunityIcons} from '@expo/vector-icons'
 import Layout from '../template/Layout'
 import { useRoute } from '@react-navigation/core'
 import {
@@ -20,14 +20,17 @@ import {
 import { db } from '../../utils/db'
 import { useAuth } from '../../hooks/useAuth'
 import MessagesIm from "../messages/MessagesIm";
+import {useNavigation} from "@react-navigation/native";
 
 const Im = () => {
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
     const { user } = useAuth()
 
+    const navigation = useNavigation()
+
     const {
-        params: { userId },
+        params: { chatId, ctx },
     } = useRoute()
 
     const sendMessage = async () => {
@@ -35,6 +38,8 @@ const Im = () => {
             await addDoc(collection(db, 'messages'), {
                 timestamp: serverTimestamp(),
                 userId: user.uid,
+                chatId: chatId,
+                img: user.img,
                 text: message,
             })
         } catch (error) {
@@ -60,15 +65,66 @@ const Im = () => {
         []
     )
     
+    console.log(messages)
+    
     return (
         <Layout>
-            <View>
+            
+            <View style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginHorizontal: 12,
+                marginVertical: 20,
+                marginTop: 0
+            }}>
+                
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                }}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Chat')}>
+                        <AntDesign
+                            name='arrowleft'
+                            size={20}
+                            color='#fefefe'
+                        />
+
+                    </TouchableOpacity>
+
+                    <View style={{
+                        marginLeft: 20,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                    }}>
+                        <Image
+                            source={{ uri: ctx.image}}
+                            style={{ width: 40, height: 40, borderRadius: 50 }}
+                        />
+                        <Text style={{
+                            marginLeft: 10,
+                            color: '#fefefe',
+                            fontSize: 16,
+                            fontFamily: 'mt-medium',
+                        }}>{ctx.name}</Text>
+                    </View>
+                </View>
+
+                <TouchableOpacity>
+                    <Feather
+                        name='more-vertical'
+                        size={20}
+                        color='#fefefe'
+                    />
+
+                </TouchableOpacity>
                 
             </View>
-            <View style={{ padding: 20 }}>
-                <ScrollView style={{ height: '75%', flexDirection: 'column-reverse' }}>
+            
+            <View>
+                <ScrollView style={{ flexDirection: 'column-reverse', marginHorizontal: 12, }}>
                     {messages.map(message => (
-                        <MessagesIm key={message.text} message={message} />
+                        <MessagesIm key={message.text} message={message} img={user.img} />
                     ))}
                 </ScrollView>
 
@@ -76,24 +132,30 @@ const Im = () => {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    marginHorizontal: 12,
+                    marginVertical: 16,
                 }}>
                     <TextInput
-                        placeholder='Enter your message'
+                        placeholderTextColor='#585858'
+                        style={{
+                            height: 36,
+                            fontFamily: 'mt-medium',
+                            padding: 12,
+                            fontSize: 13,
+                            backgroundColor: '#1f1f22',
+                            color: '#585858',
+                            borderRadius: 10,
+                            width: '90%',
+                        }}
+                        placeholder='Введите ваше сообщение'
                         onChangeText={setMessage}
                         value={message}
-                        style={{
-                            height: 40,
-                            padding: 10,
-                            backgroundColor: '#fff',
-                            borderRadius: 15,
-                            width: '86%',
-                        }}
                     />
                     <TouchableOpacity onPress={sendMessage}>
-                        <MaterialCommunityIcons
-                            name='send-circle-outline'
-                            size={42}
-                            color='#fff'
+                        <Feather
+                            name='send'
+                            size={24}
+                            color='#1a594c'
                         />
                     </TouchableOpacity>
                 </View>

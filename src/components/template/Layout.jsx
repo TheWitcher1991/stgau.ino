@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
                 backgroundColor: '#0f0f11',
                 height: '100%',
                 width: '100%',
+                paddingTop: 30,
             }}
         >
             { children }

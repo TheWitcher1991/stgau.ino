@@ -1,22 +1,22 @@
 import React from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-
 import { useAuth } from '../../hooks/useAuth'
 
 const MessagesItem = ({ conversation }) => {
     const navigation = useNavigation()
 
     const { user } = useAuth()
-
-    if (user?.uid === conversation.userId) return null
+    
+    if (user.uid !== conversation.userId) return null
 
     return (
         <View style={{width:'100%'}}>
             <TouchableOpacity
                 onPress={() =>
                     navigation.navigate('Im', {
-                        userId: conversation.userId,
+                        chatId: conversation.id,
+                        ctx: conversation,
                     })
                 }
                 style={{

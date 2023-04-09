@@ -10,8 +10,6 @@ const Chat = ({ navigation }) => {
     return (
         <Layout>
             
-            
-            
             <ScrollView>
                 <Stories />
                 <MessagesList />

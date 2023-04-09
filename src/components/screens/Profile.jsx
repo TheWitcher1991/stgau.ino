@@ -4,13 +4,11 @@ import { useAuth } from '../../hooks/useAuth'
 
 import Layout from '../template/Layout'
 import Header from '../template/Header'
-import Stories from "../Stories";
-import MessagesList from "../messages/MessagesList";
 import {LinearGradient} from "expo-linear-gradient";
-import {AntDesign, Feather, Fontisto, Ionicons} from "@expo/vector-icons";
+import {Feather, Fontisto, Ionicons} from "@expo/vector-icons";
 
 const Profile = ({ navigation }) => {
-    const { user } = useAuth
+    const { user } = useAuth()
     
     return (
         <Layout>
@@ -20,7 +18,6 @@ const Profile = ({ navigation }) => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'space-around',
-                   
                     borderRadius: 10,
                     marginVertical: 20,
                     marginHorizontal: 20,
@@ -54,7 +51,7 @@ const Profile = ({ navigation }) => {
                             top: -50,
                         }}>
                             <Image
-                                source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ANVmA23FZZhVYWmJ0kNrdzNiNqi0jDXK-BG5jtwbe6SDq4CpJ_VIDk7TNxsFP0UdWxs&usqp=CAU'}}
+                                source={{ uri: user.img}}
                                 style={{ width: 80, height: 80, borderRadius: 50 }}
                             />
                         </View>
@@ -68,13 +65,13 @@ const Profile = ({ navigation }) => {
                             fontSize: 19,
                             textAlign: 'center',
                             fontFamily: 'mt-medium',
-                        }}>Иван Иванов</Text>
+                        }}>{user.name}</Text>
                         <Text style={{
                             color: '#797979',
                             fontSize: 13,
                             textAlign: 'center',
                             fontFamily: 'mt-medium',
-                        }}>Информационные системы и технологии</Text>
+                        }}>{user.direction}</Text>
                         
                     </View>
                 </View>
@@ -120,7 +117,7 @@ const Profile = ({ navigation }) => {
                             color: '#fefefe',
                             fontSize: 13,
                             fontFamily: 'mt-light',
-                        }}>test@mail.ru</Text>
+                        }}>{user.email}</Text>
                         
                     </View>
 
@@ -151,7 +148,7 @@ const Profile = ({ navigation }) => {
                             color: '#fefefe',
                             fontSize: 13,
                             fontFamily: 'mt-light',
-                        }}>+7 (909) 652-45-56</Text>
+                        }}>{user.phone}</Text>
 
                     </View>
 
@@ -182,7 +179,7 @@ const Profile = ({ navigation }) => {
                             color: '#fefefe',
                             fontSize: 13,
                             fontFamily: 'mt-light',
-                        }}>Экономический</Text>
+                        }}>{user.faculty}</Text>
 
                     </View>
 
@@ -212,7 +209,7 @@ const Profile = ({ navigation }) => {
                             color: '#fefefe',
                             fontSize: 13,
                             fontFamily: 'mt-light',
-                        }}>21.7151.3.1.037</Text>
+                        }}>{user.study}</Text>
 
                     </View>
                     

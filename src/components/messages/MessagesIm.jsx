@@ -7,24 +7,25 @@ const MessagesIm = ({ message }) => {
 
     const isMsgByAuthUser = user.uid === message.userId
 
+    console.log(message)
+    
     return (
         <View
             style={{
                 flexDirection: 'row',
                 alignItems: 'center',
-                borderRadius: 20,
-                backgroundColor: isMsgByAuthUser ? '#32C55C' : 'purple',
-                paddingVertical: 6,
+                borderTopLeftRadius: 8,
+                borderTopRightRadius: 8,
+                borderBottomLeftRadius: 8,
+                borderBottomRightRadius: 0,
+                backgroundColor: isMsgByAuthUser ? '#24a147' : 'purple',
+                paddingVertical: 4,
                 paddingHorizontal: 10,
                 alignSelf: isMsgByAuthUser ? 'flex-end' : 'flex-start',
-                marginBottom: 20,
+                marginBottom: 16,
             }}
         >
-            <Image
-                source={{ uri: 'https://www.exibartstreet.com/wp-content/uploads/avatars/2465/5e0de52aeee8b-bpfull.jpg' }}
-                style={{ width: 50, height: 50, borderRadius: 50, marginRight: 6 }}
-            />
-            <Text style={{ color: '#fff', fontSize: 16 }}>{message.text}</Text>
+            <Text style={{ color: '#fefefe', fontSize: 14 }}>{message.text}</Text>
         </View>
     )
 }
