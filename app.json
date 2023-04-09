@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "stgau.ino",
-    "slug": "stgau.ino",
+    "name": "stgauino",
+    "slug": "stgauino",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

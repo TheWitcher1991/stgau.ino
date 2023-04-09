@@ -123,9 +123,15 @@ const Im = () => {
             
             <View>
                 <ScrollView style={{ flexDirection: 'column-reverse', marginHorizontal: 12, }}>
-                    {messages.map(message => (
-                        <MessagesIm key={message.text} message={message} img={user.img} />
-                    ))}
+                    {messages.map(message => {
+                        
+                        if (chatId === message.chatId) {
+                            return (
+                                <MessagesIm chat={chatId} key={message.text} message={message} img={user.img} />
+                            )
+                        }
+                        
+                    })}
                 </ScrollView>
 
                 <View style={{
