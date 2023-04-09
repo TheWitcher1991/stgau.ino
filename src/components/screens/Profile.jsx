@@ -77,6 +77,63 @@ const Profile = ({ navigation }) => {
                 </View>
                 
                 <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'space-around',
+                    marginBottom: 20
+                }}>
+                    
+                    <View>
+                        <Text style={{
+                            textAlign: 'center',
+                            color: '#fefefe',
+                            fontSize: 20,
+                            fontFamily: 'mt-medium',
+                            fontWeight: '600',
+                        }}>11</Text>
+                        <Text style={{
+                            color: '#797979',
+                            fontSize: 13,
+                            textAlign: 'center',
+                            fontFamily: 'mt-regular',
+                        }}>Чатов</Text>
+                    </View>
+
+                    <View>
+                        <Text style={{
+                            textAlign: 'center',
+                            color: '#fefefe',
+                            fontSize: 20,
+                            fontFamily: 'mt-medium',
+                            fontWeight: '600',
+                        }}>123</Text>
+                        <Text style={{
+                            color: '#797979',
+                            fontSize: 13,
+                            textAlign: 'center',
+                            fontFamily: 'mt-regular',
+                        }}>Сообщения</Text>
+                    </View>
+
+                    <View>
+                        <Text style={{
+                            textAlign: 'center',
+                            color: '#fefefe',
+                            fontSize: 20,
+                            fontFamily: 'mt-medium',
+                            fontWeight: '600',
+                        }}>23</Text>
+                        <Text style={{
+                            color: '#797979',
+                            fontSize: 13,
+                            textAlign: 'center',
+                            fontFamily: 'mt-regular',
+                        }}>Заказа</Text>
+                    </View>
+                    
+                </View>
+                
+                <View style={{
                     borderRadius: 10,
                     backgroundColor: '#151515',
                     padding: 20,

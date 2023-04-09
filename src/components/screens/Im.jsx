@@ -120,51 +120,49 @@ const Im = () => {
                 </TouchableOpacity>
                 
             </View>
-            
-            <View>
-                <ScrollView style={{ flexDirection: 'column-reverse', marginHorizontal: 12, }}>
-                    {messages.map(message => {
-                        
-                        if (chatId === message.chatId) {
-                            return (
-                                <MessagesIm chat={chatId} key={message.text} message={message} img={user.img} />
-                            )
-                        }
-                        
-                    })}
-                </ScrollView>
 
-                <View style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginHorizontal: 12,
-                    marginVertical: 16,
-                }}>
-                    <TextInput
-                        placeholderTextColor='#585858'
-                        style={{
-                            height: 36,
-                            fontFamily: 'mt-medium',
-                            padding: 12,
-                            fontSize: 13,
-                            backgroundColor: '#1f1f22',
-                            color: '#585858',
-                            borderRadius: 10,
-                            width: '90%',
-                        }}
-                        placeholder='Введите ваше сообщение'
-                        onChangeText={setMessage}
-                        value={message}
+            <ScrollView style={{ flexDirection: 'column-reverse', marginHorizontal: 12, }}>
+                {messages.map(message => {
+
+                    if (chatId === message.chatId) {
+                        return (
+                            <MessagesIm chat={chatId} key={message.text} message={message} img={user.img} />
+                        )
+                    }
+
+                })}
+            </ScrollView>
+
+            <View style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginHorizontal: 12,
+                marginVertical: 16,
+            }}>
+                <TextInput
+                    placeholderTextColor='#585858'
+                    style={{
+                        height: 36,
+                        fontFamily: 'mt-medium',
+                        padding: 12,
+                        fontSize: 13,
+                        backgroundColor: '#1f1f22',
+                        color: '#585858',
+                        borderRadius: 10,
+                        width: '90%',
+                    }}
+                    placeholder='Введите ваше сообщение'
+                    onChangeText={setMessage}
+                    value={message}
+                />
+                <TouchableOpacity onPress={sendMessage}>
+                    <Feather
+                        name='send'
+                        size={24}
+                        color='#1a594c'
                     />
-                    <TouchableOpacity onPress={sendMessage}>
-                        <Feather
-                            name='send'
-                            size={24}
-                            color='#1a594c'
-                        />
-                    </TouchableOpacity>
-                </View>
+                </TouchableOpacity>
             </View>
         </Layout>
     )

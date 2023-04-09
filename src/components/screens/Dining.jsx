@@ -5,16 +5,7 @@ import Layout from '../template/Layout'
 import Header from '../template/Header'
 import {Ionicons, SimpleLineIcons} from "@expo/vector-icons";
 
-export const COLORS = {
-    primary: '#147561FF',
-    secondary: '#EE1C0E',
-
-    white: '#FEFEFE',
-    black: '#000000',
-    gray: '#151515',
-}
-
-export const categories = [
+const categories = [
     {
         image:
             'https://www.pngall.com/wp-content/uploads/4/Mcdonalds-Ham-Burger-PNG.png',
@@ -51,26 +42,6 @@ export const categories = [
         active: false,
     },
 ]
-
-export const SIZES = {
-    // global sizes
-    base: 8,
-    font: 14,
-    radius: 20,
-    padding: 24,
-
-    // font sizes
-    h1: 24,
-    h2: 22,
-    h3: 16,
-    h4: 14,
-    body1: 30,
-    body2: 22,
-    body3: 16,
-    body4: 14,
-    body5: 12,
-}
-
 
 const popular = [
     {
@@ -162,7 +133,7 @@ const Dining = ({ navigation }) => {
 
                 <View style={{marginHorizontal:12}}>
                     <Text
-                        style={{ fontFamily: 'mt-medium', fontSize: SIZES.h1, fontWeight: '600', color: COLORS.white, marginBottom: 14 }}
+                        style={{ fontFamily: 'mt-medium', fontSize: 24, fontWeight: '600', color: '#fefefe', marginBottom: 14 }}
                     >
                         Категории
                     </Text>
@@ -176,13 +147,13 @@ const Dining = ({ navigation }) => {
                                 }}
                             >
                                 <TouchableHighlight
-                                    underlayColor={COLORS.secondary}
+                                    underlayColor={'#EE1C0E'}
                                     style={{
                                         justifyContent: 'center',
-                                        borderRadius: SIZES.radius,
+                                        borderRadius: 20,
                                         paddingHorizontal: 16,
                                         paddingVertical: 8,
-                                        backgroundColor: cat.active ? '#14493E' : COLORS.gray,
+                                        backgroundColor: cat.active ? '#14493E' : '#151515',
                                     }}
                                 >
                                     <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent:'center' }}>
@@ -210,7 +181,7 @@ const Dining = ({ navigation }) => {
                 
                 <View style={{marginHorizontal:12}}>
                     <Text
-                        style={{ fontFamily: 'mt-medium', fontSize: SIZES.h1, fontWeight: '600', color: COLORS.white }}
+                        style={{ fontFamily: 'mt-medium', fontSize: 24, fontWeight: '600', color: '#fefefe' }}
                     >
                         Популярное
                     </Text>
@@ -231,14 +202,14 @@ const Dining = ({ navigation }) => {
                                 }}
                             >
                                 <TouchableHighlight
-                                    underlayColor={COLORS.secondary}
+                                    underlayColor={'#EE1C0E'}
                                     style={{
                                         paddingVertical: 12,
                                         justifyContent: 'center',
-                                        borderRadius: SIZES.radius,
+                                        borderRadius: 20,
                                         paddingLeft: 5,
                                         paddingRight: 5,
-                                        backgroundColor: COLORS.gray,
+                                        backgroundColor: '#151515',
                                     }}
                                 >
                                     <View style={{ alignItems: 'center' }}>
@@ -248,8 +219,8 @@ const Dining = ({ navigation }) => {
                                         />
                                         <Text
                                             style={{
-                                                fontSize: SIZES.h4,
-                                                color: COLORS.white,
+                                                fontSize: 14,
+                                                color: '#fefefe',
                                                 marginTop: 10,
                                                 fontFamily: 'mt-medium',
                                                 textAlign: 'center',
@@ -259,8 +230,8 @@ const Dining = ({ navigation }) => {
                                         </Text>
                                         <Text
                                             style={{
-                                                fontSize: SIZES.h4,
-                                                color: COLORS.primary,
+                                                fontSize: 14,
+                                                color: '#147561FF',
                                                 fontFamily: 'mt-medium',
                                                 marginTop: 10,
                                                 textAlign: 'center',
